@@ -45,7 +45,6 @@ class Models(object):
                     for c in result.get("models", [])}
         return {self._simplify(c["name"]): c for c in result.get("models", [])}
 
-    # TODO add tests for this
     @staticmethod
     def _simplify(project_id, model_name):
         """

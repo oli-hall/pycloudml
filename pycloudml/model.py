@@ -49,7 +49,6 @@ class Model(object):
                 return False
             raise e
 
-    # TODO add tests
     @staticmethod
     def _full_model_name(project_id, model_name):
         """
