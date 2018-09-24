@@ -37,13 +37,13 @@ class Models(object):
         :return: dict of model name -> model information
         """
         result = self.ml.client.models()\
-            .list(parent="projects/".format(self.ml.project))\
+            .list(parent="projects/{}".format(self.ml.project))\
             .execute()
 
         if minimal:
-            return {self._simplify(c["name"]): c["defaultVersion"]["state"]
-                    for c in result.get("models", [])}
-        return {self._simplify(c["name"]): c for c in result.get("models", [])}
+            return {self._simplify(m["name"]): m["defaultVersion"]["state"]
+                    for m in result.get("models", [])}
+        return {self._simplify(m["name"]): m for m in result.get("models", [])}
 
     @staticmethod
     def _simplify(project_id, model_name):
@@ -55,7 +55,7 @@ class Models(object):
         projects/<project_id>/models/<model_name>
 
         :param project_id: GCP Project ID
-        :param model_name: model name
+        :param model_name: model name to simplify
         :return: the simplified model name
         """
         assert project_id
