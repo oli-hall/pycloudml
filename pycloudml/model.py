@@ -65,7 +65,7 @@ class Model(object):
         assert project_id
         assert model_name
 
-        return "/projects/{}/models/{}".format(project_id, model_name)
+        return "projects/{}/models/{}".format(project_id, model_name)
 
     def status(self):
         """
