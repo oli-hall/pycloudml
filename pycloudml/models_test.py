@@ -18,12 +18,12 @@ class ModelsTest(unittest.TestCase):
 
         self.assertEqual(Models._simplify(PROJECT_ID, model_name), model_name)
 
-    def test_simplify__without_project_id_raises_assertion_error(self):
+    def test_simplify_without_project_id_raises_assertion_error(self):
         model_name = "model_name"
 
         with self.assertRaises(AssertionError):
             Models._simplify(None, model_name)
 
-    def test_simplify__without_model_name_raises_assertion_error(self):
+    def test_simplify_without_model_name_raises_assertion_error(self):
         with self.assertRaises(AssertionError):
             Models._simplify(PROJECT_ID, None)
