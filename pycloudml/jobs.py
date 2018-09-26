@@ -18,6 +18,8 @@ class Jobs(object):
 
         self.ml = ml
 
+    # TODO list by model?
+
     def list(self, minimal=True):
         """
         Queries the CloudML API, returning a dict of all jobs,
