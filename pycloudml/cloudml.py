@@ -2,6 +2,7 @@ from googleapiclient import discovery
 
 from pycloudml.model import Model
 from pycloudml.models import Models
+from pycloudml.jobs import Jobs
 
 
 class CloudML(object):
