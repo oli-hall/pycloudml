@@ -95,6 +95,12 @@ class Job(object):
         """
         raise NotImplementedError()
 
+    def cancel(self):
+        """
+        TODO
+        """
+        raise NotImplementedError()
+
     def delete(self):
         """
         Deletes the Job.
